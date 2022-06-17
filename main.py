@@ -104,7 +104,8 @@ def inference():
 def endpoint_predict_sample(
     project: str, location: str, endpoint: str, instances: list,
 ):
-    creds = service_account.Credentials.from_service_account_file("json/nema-online-classifier-e5d23692a03d.json")
+    # creds = service_account.Credentials.from_service_account_file("json/nema-online-classifier-e5d23692a03d.json")
+    creds = service_account.Credentials.from_service_account_file("app/gcp_key.json")
     aiplatform.init(project=project, location=location, credentials=creds)
 
     endpoint = aiplatform.Endpoint(endpoint)
